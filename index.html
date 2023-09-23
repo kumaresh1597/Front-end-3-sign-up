@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="signup-card">
+        <form id="user-form">
+            <div>Welcome back! 👋</div>
+            <div class="title">Sign up to your account</div>
+            <div class="div-name">
+                <label for="name">Your Name</label>
+                <input type="text" placeholder="Name" id="name" required>
+            </div>
+            <div class="div-email">
+                <label for="email">Your email</label>
+                <input type="email" placeholder="email" id="email" required>
+            </div>
+            <div class="div-password">
+                <label for="password">Your password</label>
+                <input type="password" placeholder="password" id="password" required>
+            </div>
+            <div class="div-cPassword">
+                <label for="conform-password">Conform password</label>
+                <input type="password" placeholder="Re-type password" id="conform-password" required>
+            </div>
+    
+            <button type="submit" id="btn">CONTINUE</button>
+
+            <div class="error">
+                <p id="error">All fields are mandatory!</p>     
+            </div>
+        </form>
+              
+    </div>
+    
+
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
