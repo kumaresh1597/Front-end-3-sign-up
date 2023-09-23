@@ -4,27 +4,25 @@ const userForm = document.getElementById("user-form");
 
 const error = document.getElementById("error");
 
+let accessToken = localStorage.getItem("token");
 
+if(accessToken){
+    window.location.href = "http://127.0.0.1:5500/profile.html";
+}else{
 
-continueBtn.addEventListener("click",(event)=>{
+     continueBtn.addEventListener("click",(event)=>{
 
     event.preventDefault();
-
-    let accessToken = localStorage.getItem("token");
-
-    if(accessToken){
-        window.location.href = "http://127.0.0.1:5500/profile.html";
-    }else{
         const myName = document.getElementById("name");
         const email = document.getElementById("email");
         const password = document.getElementById("password");
         const cPassword = document.getElementById("conform-password");
 
-    if(password.value !== cPassword.value && password){
+    if(password.value !== cPassword.value){
         error.innerText = "Password mismatch";
         error.style.color = "red";
        return alert("Password mismatch");
-    } else{
+    } else if (password !== null){
         const token = generateAccessToken();
         localStorage.setItem("name",`${myName.value}`);
         localStorage.setItem("email",`${email.value}`);
@@ -42,8 +40,8 @@ continueBtn.addEventListener("click",(event)=>{
             return alert("All feilds are required*");
         }  
       }
-    }
-});
+    });
+}
 
 function generateAccessToken(){
     let char = "123rety45gfhret";
